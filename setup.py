@@ -1,5 +1,6 @@
-
 from setuptools import setup
+
+
 setup(name='lighthouse',
       version='0.1',
       description='Python Lighthouse',
