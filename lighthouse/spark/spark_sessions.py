@@ -27,11 +27,8 @@ class SparkSessions(ABC):
     def spark_session_builder(self) -> SparkSession.Builder:
         builder = SparkSession.Builder()
 
-        joined_config: Dict[str, str] = (
-            self.spark_options()
-                .copy()
-                .update(self.default_configuration())
-                .self)
+        joined_config: Dict[str, str] = self.spark_options().copy()
+        joined_config.update(self.default_configuration())
         for key, value in joined_config.items():
             builder.config(key, value)
 
