@@ -1,12 +1,12 @@
 from setuptools import setup
 
 
-setup(name='lighthouse',
+setup(name='py-lighthouse',
       version='0.1',
       description='Python Lighthouse',
       author='Dataminded',
       author_email='dev@dataminded.be',
-      url='www.dataminded.be',
+      url='https://www.dataminded.be',
       packages=[
          "lighthouse"
       ],
