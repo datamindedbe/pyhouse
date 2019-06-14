@@ -5,6 +5,8 @@ setup(name='lighthouse',
       version='0.1',
       description='Python Lighthouse',
       author='Dataminded',
+      author_email='dev@dataminded.be',
+      url='www.dataminded.be',
       packages=[
          "lighthouse"
       ],
@@ -12,6 +14,4 @@ setup(name='lighthouse',
           'Pipfile',
           'boto3',
           'pyspark'
-      ],
-      include_package_data=True,
-      zip_safe=False)
+      ])
