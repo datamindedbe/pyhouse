@@ -1,5 +1,6 @@
-from abc import ABC, abstractmethod
-from pyspark.sql import SparkSession, DataFrame
+from abc import ABC
+
+from pyspark.sql import SparkSession
 
 from .data_link import DataLink
 

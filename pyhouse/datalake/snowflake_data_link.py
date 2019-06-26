@@ -40,13 +40,7 @@ class SnowflakeDataLink(DataLink):
     def read(self) -> DataFrame:
         # Partition parameters are only applicable for read operation
         # for now, order is important as some values can be overwritten
-        return (
-            self.spark
-            .read
-            .format(self.connection_format)
-            .options(**self.sfOptions)
-            .load()
-        )
+        return self.spark.read.format(self.connection_format).options(**self.sfOptions).load()
 
     def write(self, frame: DataFrame) -> None:
         (

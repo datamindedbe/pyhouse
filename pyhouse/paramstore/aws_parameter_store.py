@@ -1,7 +1,9 @@
+import logging
 import boto3
-from botocore.exceptions import ClientError
 
 from .parameter_store import ParameterStore
+
+logger = logging.getLogger(__name__)
 
 
 class AwsParameterStore(ParameterStore):
@@ -12,24 +14,22 @@ class AwsParameterStore(ParameterStore):
     def __init__(self, region_name: str = "eu-west-1"):
         self.ssm = boto3.client("ssm", region_name=region_name, verify=None)
 
-    def _get_parameter(self, name: str, decrypt: bool = False) -> str:
+    def get_param(self, name: str) -> str:
+        # aws will randomly drop ssm requests
         try:
-            response = self.ssm.get_parameter(Name=name, WithDecryption=decrypt)
-        except ClientError:
-            # logger.warning("Problem calling the parameter store for the key '%s'", name)
-            raise
-        return response["Parameter"]["Value"]
+            value = self.ssm.get_parameter(Name=name, WithDecryption=True)["Parameter"]["Value"]
+            return str(value)
+        except Exception as e:
+            logger.warning(f"AwsParameterStore::get_param:{name}: Caught exception {e}")
+            raise e
 
-    def get_param(self, param: str) -> str:
-        return self._get_parameter(param)
-
-    def get_secure_param(self, param: str) -> str:
-        return self._get_parameter(param, decrypt=True)
-
-    def set_param(self, param: str, value: str, overwrite: bool = False) -> None:
-        self.ssm.put_parameter(Name=param, Value=value,
-                               Type='String', Overwrite=overwrite)
-
-    def set_secure_param(self, param: str, value: str, overwrite: bool = False) -> None:
-        self.ssm.put_parameter(Name=param, Value=value,
-                               Type='SecureString', Overwrite=overwrite)
+    def set_param(
+        self, param: str, value: str, overwrite: bool = False, secure: bool = False
+    ) -> None:
+        param_type = "SecureString" if secure else "String"
+        try:
+            # aws will randomly drop ssm requests
+            self.ssm.put_parameter(Name=param, Value=value, Type=param_type, Overwrite=overwrite)
+        except Exception as e:
+            logger.warning("AwsParameterStore::set_param: Caught exception")
+            raise e

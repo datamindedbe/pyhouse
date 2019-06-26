@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/py-lighthouse.iml" filepath="$PROJECT_DIR$/.idea/py-lighthouse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/pyhouse.iml" filepath="$PROJECT_DIR$/.idea/pyhouse.iml" />
     </modules>
   </component>
 </project>

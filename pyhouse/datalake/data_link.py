@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+
 from pyspark.sql import SparkSession, DataFrame
 
 
@@ -8,10 +9,9 @@ class DataLink(ABC):
         self.environment = environment
 
     @abstractmethod
-    def read(self):
+    def read(self) -> DataFrame:
         raise NotImplementedError
 
     @abstractmethod
-    def write(self, frame: DataFrame):
+    def write(self, frame: DataFrame) -> None:
         raise NotImplementedError
-

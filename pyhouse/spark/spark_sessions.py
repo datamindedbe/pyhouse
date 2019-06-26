@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 from typing import Dict
+
 from pyspark.sql import SparkSession
 
 
 class SparkSessions(ABC):
-
     @abstractmethod
     def enable_hive_support(self) -> bool:
         raise NotImplementedError
@@ -16,12 +16,11 @@ class SparkSessions(ABC):
     @staticmethod
     def default_configuration() -> Dict[str, str]:
         return {
-            "spark.driver.memory": "2g",
             "spark.serializer": "org.apache.spark.serializer.KryoSerializer",
             "spark.sql.avro.compression.codec": "snappy",
             "spark.sql.parquet.compression.codec": "snappy",
             "spark.sql.sources.partitionColumnTypeInference.enabled": "false",
-            "spark.sql.sources.partitionOverwriteMode": "dynamic"
+            "spark.sql.sources.partitionOverwriteMode": "dynamic",
         }
 
     def spark_session_builder(self) -> SparkSession.Builder:

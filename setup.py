@@ -13,7 +13,7 @@ requirements = convert_deps_to_pip(pfile['packages'], r=False)
 
 setup(
     name='pyhouse',
-    version='0.0.4',
+    version='0.0.5',
     description='Python Lighthouse',
     author='Dataminded',
     license="Apache-2.0",
