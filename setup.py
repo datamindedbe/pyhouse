@@ -10,10 +10,11 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 pfile = Project(chdir=False).parsed_pipfile
 requirements = convert_deps_to_pip(pfile['packages'], r=False)
+dev_requirements = convert_deps_to_pip(pfile['dev-packages'], r=False)
 
 setup(
     name='pyhouse',
-    version='0.0.5',
+    version='0.0.6',
     description='Python Lighthouse',
     author='Dataminded',
     license="Apache-2.0",
@@ -23,4 +24,9 @@ setup(
     long_description_content_type='text/markdown',
     packages=find_packages(),
     install_requires=requirements,
+    test_requires=dev_requirements,
+    package_data={
+        'foopkg': ['py.typed'],
+    },
+    zip_safe=False,
 )
