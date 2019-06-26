@@ -3,18 +3,9 @@ name = "public_repo"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
-[[source]]
-name = private_repo 
-url = "https://s3.eu-central-1.amazonaws.com/bac-artifacts-oxcuiw/pipy"
-verify_ssl = false
-
-[dev-packages]
-pyspark = "==2.4.0"
-
 [packages]
 boto3 = "*"
-lighthouse = "*"
+pyspark = "==2.4.0"
 
 [requires]
 python_version = "3.7.3"
-
