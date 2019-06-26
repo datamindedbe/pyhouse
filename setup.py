@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 from pipenv.project import Project
 from pipenv.utils import convert_deps_to_pip
 
@@ -13,7 +13,7 @@ requirements = convert_deps_to_pip(pfile['packages'], r=False)
 
 setup(
     name='pyhouse',
-    version='0.0.1',
+    version='0.0.4',
     description='Python Lighthouse',
     author='Dataminded',
     license="Apache-2.0",
@@ -21,8 +21,6 @@ setup(
     url='https://www.dataminded.be',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    packages=[
-       "pyhouse"
-    ],
+    packages=find_packages(),
     install_requires=requirements,
 )
