@@ -1,2 +1,2 @@
-# py-lighthouse
-Port of Lighthouse for pyspark
+# pyhouse
+Port of Lighthouse (https://github.com/datamindedbe/lighthouse) for python and pyspark
