@@ -34,7 +34,11 @@ class FileSystemDataLink(PathBasedDataLink):
                 .load(self.path)
             )
         else:
-            return self.spark.read.format(self.spark_format).options(**self.options).load(self.path)
+            return (
+                self.spark.read.format(self.spark_format)
+                .options(**self.options)
+                .load(self.path)
+            )
 
     def write(self, frame: DataFrame) -> None:
         if self.partitioned_by is not None:
