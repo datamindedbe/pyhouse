@@ -42,4 +42,3 @@ class KafkaDataLink(DataLink):
             .options(**self.options)
             .save()
         )
-
