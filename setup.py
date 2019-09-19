@@ -14,7 +14,7 @@ dev_requirements = convert_deps_to_pip(pfile['dev-packages'], r=False)
 
 setup(
     name='pyhouse',
-    version='0.0.6',
+    version='0.0.7',
     description='Python Lighthouse',
     author='Dataminded',
     license="Apache-2.0",
@@ -26,7 +26,7 @@ setup(
     install_requires=requirements,
     test_requires=dev_requirements,
     package_data={
-        'foopkg': ['py.typed'],
+        'pyhouse': ['py.typed'],
     },
     zip_safe=False,
 )
