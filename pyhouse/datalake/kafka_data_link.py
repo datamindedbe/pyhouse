@@ -25,7 +25,7 @@ class KafkaDataLink(DataLink):
             self.spark
             .read
             .format("kafka")
-            .option("topic", self.topic)
+            .option("subscribe", self.topic)
             .option("kafka.bootstrap.servers", ",".join(self.bootstrap_servers))
             .options(**self.options)
             .load()
