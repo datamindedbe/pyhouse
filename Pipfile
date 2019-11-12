@@ -4,15 +4,15 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pipenv = "==2018.11.26"
+wheel = "==0.33.6"
 setuptools = "*"
 twine = "==1.13.0"
 mypy = "==0.700"
 flake8 = "==3.7.7"
+pyspark = ">=2.4.0"
 
 [packages]
 boto3 = "==1.9.176"
-pyspark >= "==2.4.0"
 
 [requires]
 python_version = "3.7"
