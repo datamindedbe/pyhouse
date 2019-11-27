@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0ea314b707ad8d554cfef79cd9aff1bdd8f56e57be9bcf6d903c1f1d03c77916"
+            "sha256": "79fb528c1e512296eb8c6f46e863a8738d7fe21cd72812144e0b162ce3b66746"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -190,10 +190,10 @@
         },
         "pygments": {
             "hashes": [
-                "sha256:71e430bc85c88a430f000ac1d9b331d2407f681d6f6aec95e8bcfbc3df5b0127",
-                "sha256:881c4c157e45f30af185c1ffe8d549d48ac9127433f2c380c24b84572ad66297"
+                "sha256:83ec6c6133ca6b529b7ff5aa826328fd14b5bb02a58c37f4f06384e96a0f94ab",
+                "sha256:b7949de3d396836085fea596998b135a22610bbcc4f2abfe9e448e44cbc58388"
             ],
-            "version": "==2.4.2"
+            "version": "==2.5.1"
         },
         "pyspark": {
             "hashes": [
@@ -201,6 +201,14 @@
             ],
             "index": "public_repo",
             "version": "==2.4.4"
+        },
+        "pyspark-stubs": {
+            "hashes": [
+                "sha256:3ffbebfd0d7881a1e0772c9ec27fa5b61c3c8cf65431dd7c7f8625fe1a8cf3d3",
+                "sha256:a3fea60796096fbbf058d6e053e3650a645624aac70721c5a7896ec35adac10b"
+            ],
+            "index": "public_repo",
+            "version": "==2.4.0.post6"
         },
         "readme-renderer": {
             "hashes": [
@@ -232,10 +240,10 @@
         },
         "tqdm": {
             "hashes": [
-                "sha256:9de4722323451eb7818deb0161d9d5523465353a6707a9f500d97ee42919b902",
-                "sha256:c1d677f3a85fa291b34bdf8f770f877119b9754b32673699653556f85e2c2f13"
+                "sha256:5a1f3d58f3eb53264387394387fe23df469d2a3fab98c9e7f99d5c146c119873",
+                "sha256:f1a1613fee07cc30a253051617f2a219a785c58877f9f6bfa129446cbaf8b4c1"
             ],
-            "version": "==4.38.0"
+            "version": "==4.39.0"
         },
         "twine": {
             "hashes": [

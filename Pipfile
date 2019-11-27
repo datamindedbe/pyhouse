@@ -10,6 +10,7 @@ twine = "==1.13.0"
 mypy = "==0.700"
 flake8 = "==3.7.7"
 pyspark = ">=2.4.0"
+pyspark-stubs = ">=2.4.0"
 
 [packages]
 boto3 = "==1.9.176"
