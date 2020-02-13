@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-DIR=`dirname $0`
+cd "$(dirname "$0")/.."
 
 set -ex
-mypy --config-file ${DIR}/../mypy.ini ${DIR}/../pyhouse
+mypy --config-file mypy.ini pyhouse
 flake8 --max-line-length=120
-python -m unittest discover ${DIR}/../tests/
+python -m unittest discover tests
