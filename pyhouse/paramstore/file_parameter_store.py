@@ -13,7 +13,7 @@ class FileParameterStore(ParameterStore):
 
     def get_param(self, param: str) -> str:
         self.config.read(self.filename)
-        return self.config["config"][param]
+        return self.config[self._section][param]
 
     def set_param(
         self, param: str, value: str, overwrite: bool = False, secure: bool = False
