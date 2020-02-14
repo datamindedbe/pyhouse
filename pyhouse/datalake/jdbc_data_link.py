@@ -1,4 +1,4 @@
-import pyspark.sql.functions as sfun
+import pyspark.sql.functions as psf
 from pyspark.sql import SparkSession, DataFrame
 
 from .data_link import DataLink
@@ -41,14 +41,16 @@ class JdbcDataLink(DataLink):
 
         else:
             # We need a partition column
-            assert self.partition_column != ""
-            # Retrieve lower and upper bound first to
-            # determine the degree of parallelism
+            if self.partition_column == "":
+                raise AssertionError("Partitioning column should not be empty.")
+
+            col = psf.col(self.partition_column)
+            # Retrieve lower and upper bound first to determine the degree of parallelism
             lower_bound, upper_bound = (
                 reader.load()
                 .select(
-                    sfun.min(sfun.col(self.partition_column)).alias("mmin"),
-                    sfun.max(sfun.col(self.partition_column)).alias("mmax"),
+                    psf.min(col).alias("mmin"),
+                    psf.max(col).alias("mmax"),
                 )
                 .collect()[0]
             )
