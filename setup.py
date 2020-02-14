@@ -1,9 +1,10 @@
-from setuptools import setup, find_packages
-from pipenv.project import Project
-from pipenv.utils import convert_deps_to_pip
-
 # read the contents of your README file
 from os import path
+
+from pipenv.project import Project
+from pipenv.utils import convert_deps_to_pip
+from setuptools import setup, find_packages
+
 this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
@@ -14,9 +15,10 @@ dev_requirements = convert_deps_to_pip(pfile['dev-packages'], r=False)
 
 setup(
     name='pyhouse',
-    version='0.0.11',
-    description='Python Lighthouse',
-    author='Dataminded',
+    version='0.0.12',
+    description=('Lighthouse for Python: a package facilitating the creation '
+                 'of data pipelines.'),
+    author='Data Minded',
     license="Apache-2.0",
     author_email='dev@dataminded.be',
     url='https://www.dataminded.be',
@@ -29,4 +31,12 @@ setup(
         'pyhouse': ['py.typed'],
     },
     zip_safe=False,
+    keywords="data lake engineering pipeline catalog cloud",
+    classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Libraries',
+        'License :: OSI Approved :: Apache Software License',
+        'Programming Language :: Python :: 3.7',
+    ]
 )
