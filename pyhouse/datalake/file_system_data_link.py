@@ -44,7 +44,7 @@ class FileSystemDataLink(PathBasedDataLink):
         if self.partitioned_by is not None:
             (
                 frame.write.format(self.spark_format)
-                .partitionBy(self.partitioned_by)
+                .partitionBy(*self.partitioned_by)
                 .options(**self.options)
                 .mode(self.savemode)
                 .save(self.path)
