@@ -13,7 +13,7 @@ pyspark = ">=2.4.0"
 pyspark-stubs = ">=2.4.0"
 
 [packages]
-boto3 = ">=1.9.176"
+boto3 = ">=1.4.4"
 
 [requires]
 python_version = "3.7"
