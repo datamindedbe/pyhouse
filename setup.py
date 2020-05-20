@@ -1,4 +1,3 @@
-# read the contents of your README file
 from os import path
 
 from pipenv.project import Project
@@ -15,7 +14,7 @@ dev_requirements = convert_deps_to_pip(pfile['dev-packages'], r=False)
 
 setup(
     name='pyhouse',
-    version='0.0.12',
+    version='0.0.13',
     description=('Lighthouse for Python: a package facilitating the creation '
                  'of data pipelines.'),
     author='Data Minded',
